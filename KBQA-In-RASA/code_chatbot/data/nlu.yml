@@ -1,0 +1,2884 @@
+version: "2.0"
+
+nlu:
+
+
+# 意图字段
+- intent: greet
+  examples: |
+    - 你好
+    - 你好啊
+    - 早上好
+    - 晚上好
+    - hello
+    - hi
+    - 嗨
+    - 嗨喽
+    - 见到你很高兴
+    - 嘿
+    - 早
+    - 上午好
+    - hello哈喽
+    - 哈喽哈喽
+    - hello hello
+    - 喂喂
+
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - bye bye
+    - 88
+    - 886
+    - 再见
+    - 拜
+    - 拜拜
+    - 拜拜，下次再聊
+    - 下次见
+    - 回头见
+    - 下次再见
+    - 下次再聊
+    - 有空再聊
+    - 先这样吧
+    - 好了，就说这么多了
+    - 好了，先这样
+    - 没事
+
+- intent: who_are_you
+  examples: |
+    - 你是谁
+    - 我知道你吗
+    - 谁
+    - 我认识你吗
+    - 这是谁啊
+    - 是谁
+    - 请问你是谁
+    - 请问我认识你吗
+    - 你是哪位
+    - 你是？
+    - 是谁？
+    - 可以告诉我你的名字吗
+    - 你叫什么名字
+
+- intent: what_to_do
+  examples: |
+    - 你支持什么功能
+    - 你有什么功能
+    - 你能干什么
+    - 你能做什么
+    - 你可以做什么
+
+
+- intent: thanks
+  examples: |
+    - 谢谢
+    - thanks
+    - thank you
+    - 真的太感谢你了，帮了我大忙
+    - 谢谢你帮了我大忙
+    - 你帮了我大忙，谢谢你小智
+    - 非常感谢
+    - 谢了
+
+- intent: deny
+  examples: |
+    - 不
+    - no
+    - 不可以
+    - 不是的
+    - 不认同
+    - 否定
+    - 不是这样子的
+    - 我不同意你的观点
+    - 不同意
+    - 不好
+    - 你长得很美，就不要想得太美。
+    - 拒绝
+    - 不行
+
+- intent: affirm
+  examples: |
+    - 是的
+    - 当然
+    - 好的
+    - ok
+    - 嗯
+    - 可以
+    - 你可以这么做
+    - 你做得可以啊
+    - 同意
+    - 听起来不错
+    - 是这样的
+    - 的确是这样子的
+    - 我同意你的观点
+    - 对的
+    - 好滴
+    - 行
+    - 还行
+    - 当然可以
+
+- intent: recommend_movie
+  examples: |
+    - 推荐几部[爱情片](movie_type)
+    - 有没有好看的[动作电影](movie_type)
+    - 有什么推荐的[科幻片](movie_type)
+    - 我想找几部[悬疑片](movie_type)看看
+    - 有啥好的[武打片](movie_type)吗？
+    - 有没有[宫崎骏](director)的片子？
+    - 推荐几部[陈凯歌](director)拍的电影
+    - [诺兰](director)导的电影
+    - [诺兰](director)拍过什么片子？
+    - [诺兰](director)有什么片子？
+    - [诺兰](director)有什么作品？
+    - 我想找几部[托马斯·温特伯格](director)导的电影
+    - 有没有[张国荣](actor)的片子？
+    - [奥黛丽赫本](actor)演的电影
+    - 我想找几部[周星驰](actor)演的电影
+    - [刘德华](actor)演过什么电影
+    - [刘德华](actor)有什么作品
+    - 请推荐几部[60年代](time)的电影
+    - 我想看[70年代](time)的电影
+    - 有没有[90年代](time)的电影？
+    - [1986](single_time)年有什么好看的电影？
+    - 有没有[中国](country)的好电影？
+    - 请推荐几部[美国](country)电影？
+    - 有没有[美剧](country)推荐？
+    - 我想看[港片](country)
+    - 有没有[诺兰](director)导演，[刘德华](actor)主演的片子？
+    - 有没有[刘德华](actor)主演，[张艺谋](director)导演的电影？
+    - 推荐两部[张艺谋](director)在[90年代](time)导演的电影
+    - 推荐几部[成龙](actor)在[70年代](time)主演的电影
+    - 有没有[80年代](time)主演是[刘德华](actor)的电影?
+    - 我想看[90年代](time)的[美剧](country)。
+    - 推荐几部[70年代](time)的[港片](country)。
+    - 推荐几部[日本](country)的[爱情片](movie_type)。
+    - 我想看[国内](country)的[动作片](movie_type)。
+    - [1986](single_time)年有哪些[爱情片](movie_type)？
+
+- intent: recommend_movie_without_entities
+  examples: |
+    - 请给我推荐几部电影。
+    - 有什么推荐的电影吗？
+    - 有什么好看的电影吗？
+    - 有什么电影推荐吗？	
+    - 我想找点电影看。
+    - 有什么电影推荐吗
+    - 推荐几部电影
+    - 来几部电影
+    - 电影推荐
+
+# 同义词字段
+## 年代
+- synonym: 1960,1961,1962,1963,1964,1965,1966,1967,1968,1969
+  examples: |
+    - 60年代
+    - 六十年代
+- synonym: 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979
+  examples: |
+    - 70年代
+    - 七十年代
+- synonym: 1980,1981,1982,1983,1984,1985,1986,1987,1988,1989
+  examples: |
+    - 80年代
+    - 八十年代
+- synonym: 1990,1991,1992,1993,1994,1995,1996,1997,1998,1999
+  examples: |
+    - 90年代
+    - 九十年代
+## 人名
+- synonym: 蒂姆·罗宾斯TimRobbins
+  examples: |
+    - 蒂姆·罗宾斯
+    - 蒂姆罗宾斯
+    - TimRobbins
+
+- synonym: 张国荣LeslieCheung
+  examples: |
+    - 张国荣
+    - 张国荣
+    - LeslieCheung
+
+- synonym: 汤姆·汉克斯TomHanks
+  examples: |
+    - 汤姆·汉克斯
+    - 汤姆汉克斯
+    - TomHanks
+
+- synonym: 让·雷诺JeanReno
+  examples: |
+    - 让·雷诺
+    - 让雷诺
+    - JeanReno
+
+- synonym: 柊瑠美RumiHîragi
+  examples: |
+    - 柊瑠美
+    - 柊瑠美
+    - RumiHragi
+
+- synonym: 连姆·尼森LiamNeeson
+  examples: |
+    - 连姆·尼森
+    - 连姆尼森
+    - LiamNeeson
+
+- synonym: 金·凯瑞JimCarrey
+  examples: |
+    - 金·凯瑞
+    - 金凯瑞
+    - JimCarrey
+
+- synonym: 理查·基尔RichardGe
+  examples: |
+    - 理查·基尔
+    - 理查基尔
+    - RichardGe
+
+- synonym: 蒂姆·罗斯TimRoth
+  examples: |
+    - 蒂姆·罗斯
+    - 蒂姆罗斯
+    - TimRoth
+
+- synonym: 阿米尔·汗AamirKhan
+  examples: |
+    - 阿米尔·汗
+    - 阿米尔汗
+    - AamirKhan
+
+- synonym: 本·贝尔特BenBurtt
+  examples: |
+    - 本·贝尔特
+    - 本贝尔特
+    - BenBurtt
+
+- synonym: 刘德华AndyLau
+  examples: |
+    - 刘德华
+    - 刘德华
+    - AndyLau
+
+- synonym: 泰隆·鲍华TyronePower
+  examples: |
+    - 泰隆·鲍华
+    - 泰隆鲍华
+    - TyronePower
+
+- synonym: 周星驰StephenChow
+  examples: |
+    - 周星驰
+    - 周星驰
+    - StephenChow
+
+- synonym: 孔侑YooGong
+  examples: |
+    - 孔侑
+    - 孔侑
+    - YooGong
+
+- synonym: 马龙·白兰度
+  examples: |
+    - 马龙·白兰度
+    - 马龙白兰度
+
+- synonym: 威尔·史密斯WillSmith
+  examples: |
+    - 威尔·史密斯
+    - 威尔史密斯
+    - WillSmith
+
+- synonym: 尊龙JohnLone
+  examples: |
+    - 尊龙
+    - 尊龙
+    - JohnLone
+
+- synonym: 日高法子NorikoHidaka
+  examples: |
+    - 日高法子
+    - 日高法子
+    - NorikoHidaka
+
+- synonym: 玛德琳·卡罗尔MadelineCarroll
+  examples: |
+    - 玛德琳·卡罗尔
+    - 玛德琳卡罗尔
+    - MadelineCarroll
+
+- synonym: 葛优YouGe
+  examples: |
+    - 葛优
+    - 葛优
+    - YouGe
+
+- synonym: 克里斯蒂安·贝尔Christ
+  examples: |
+    - 克里斯蒂安·贝尔
+    - 克里斯蒂安贝尔
+    - Christ
+
+- synonym: 伊利亚·伍德ElijahWood
+  examples: |
+    - 伊利亚·伍德
+    - 伊利亚伍德
+    - ElijahWood
+
+- synonym: 徐峥ZhengXu
+  examples: |
+    - 徐峥
+    - 徐峥
+    - ZhengXu
+
+- synonym: 薛景求Kyung-guSol
+  examples: |
+    - 薛景求-
+    - 薛景求
+    - KyungguSol
+
+- synonym: 倍赏千惠子ChiekoBaishô
+  examples: |
+    - 倍赏千惠子ô
+    - 倍赏千惠子
+    - ChiekoBaish
+
+- synonym: 亨利·方达HenryFonda
+  examples: |
+    - 亨利·方达
+    - 亨利方达
+    - HenryFonda
+
+- synonym: 扎因·拉费阿Zainal-Rafeea
+  examples: |
+    - 扎因·拉费阿-
+    - 扎因拉费阿
+    - ZainalRafeea
+
+- synonym: 姜文WenJiang
+  examples: |
+    - 姜文
+    - 姜文
+    - WenJiang
+
+- synonym: 田中真弓MayumiTanaka
+  examples: |
+    - 田中真弓
+    - 田中真弓
+    - MayumiTanaka
+
+- synonym: 苏拉·沙玛SurajSharma
+  examples: |
+    - 苏拉·沙玛
+    - 苏拉沙玛
+    - SurajSharma
+
+- synonym: 阿努克·斯特芬AnukSteffen
+  examples: |
+    - 阿努克·斯特芬
+    - 阿努克斯特芬
+    - AnukSteffen
+
+
+- synonym: 阿尔·帕西诺AlPacino
+  examples: |
+    - 阿尔·帕西诺
+    - 阿尔帕西诺
+    - AlPacino
+
+- synonym: 奥黛丽·赫本AudreyHepburn
+  examples: |
+    - 奥黛丽·赫本
+    - 奥黛丽赫本
+    - AudreyHepburn
+
+- synonym: 罗宾·威廉姆斯RobinWilliams
+  examples: |
+    - 罗宾·威廉姆斯
+    - 罗宾威廉姆斯
+    - RobinWilliams
+
+- synonym: 菲利普·努瓦雷Philipp
+  examples: |
+    - 菲利普·努瓦雷
+    - 菲利普努瓦雷
+    - Philipp
+
+- synonym: 维果·莫腾森ViggoMortensen
+  examples: |
+    - 维果·莫腾森
+    - 维果莫腾森
+    - ViggoMortensen
+
+- synonym: 邱岳峰YuefengQiu
+  examples: |
+    - 邱岳峰
+    - 邱岳峰
+    - YuefengQiu
+
+
+- synonym: 宋康昊Kang-hoSong
+  examples: |
+    - 宋康昊-
+    - 宋康昊
+    - KanghoSong
+
+- synonym: 郎雄SihungLung
+  examples: |
+    - 郎雄
+    - 郎雄
+    - SihungLung
+
+- synonym: 爱德华·诺顿EdwardNorton
+  examples: |
+    - 爱德华·诺顿
+    - 爱德华诺顿
+    - EdwardNorton
+
+- synonym: 罗素·克劳RussellCrowe
+  examples: |
+    - 罗素·克劳
+    - 罗素克劳
+    - RussellCrowe
+
+- synonym: 凯特·布兰切特CateBlanchett
+  examples: |
+    - 凯特·布兰切特
+    - 凯特布兰切特
+    - CateBlanchett
+
+- synonym: 阿萨·巴特菲尔德AsaButterfield
+  examples: |
+    - 阿萨·巴特菲尔德
+    - 阿萨巴特菲尔德
+    - AsaButterfield
+
+- synonym: 中山美穗MihoNakayama
+  examples: |
+    - 中山美穗
+    - 中山美穗
+    - MihoNakayama
+
+- synonym: 杰森·弗莱明JasonFlemyng
+  examples: |
+    - 杰森·弗莱明
+    - 杰森弗莱明
+    - JasonFlemyng
+
+- synonym: 莫妮卡·贝鲁奇Monica
+  examples: |
+    - 莫妮卡·贝鲁奇
+    - 莫妮卡贝鲁奇
+    - Monica
+
+- synonym: 朱莉·安德鲁斯JulieAndrews
+  examples: |
+    - 朱莉·安德鲁斯
+    - 朱莉安德鲁斯
+    - JulieAndrews
+
+- synonym: 马里奥·卡萨斯MarioCasas
+  examples: |
+    - 马里奥·卡萨斯
+    - 马里奥卡萨斯
+    - MarioCasas
+
+- synonym: 萨姆·沃辛顿SamWorthington
+  examples: |
+    - 萨姆·沃辛顿
+    - 萨姆沃辛顿
+    - SamWorthington
+
+- synonym: 丹尼尔·雷德克里夫DanielRadcliffe
+  examples: |
+    - 丹尼尔·雷德克里夫
+    - 丹尼尔雷德克里夫
+    - DanielRadcliffe
+
+- synonym: 默罕默德·阿米尔·纳吉Mohamma
+  examples: |
+    - 默罕默德·阿米尔·纳吉
+    - 默罕默德阿米尔纳吉
+    - Mohamma
+
+- synonym: 朱迪·福斯特JodieFoster
+  examples: |
+    - 朱迪·福斯特
+    - 朱迪福斯特
+    - JodieFoster
+
+- synonym: 拉尔夫·费因斯RalphFiennes
+  examples: |
+    - 拉尔夫·费因斯
+    - 拉尔夫费因斯
+    - RalphFiennes
+
+- synonym: 莱昂纳多·迪卡普里奥LeonardoDiCaprio
+  examples: |
+    - 莱昂纳多·迪卡普里奥
+    - 莱昂纳多迪卡普里奥
+    - LeonardoDiCaprio
+    - Leonardo
+
+- synonym: 休·杰克曼HughJackman
+  examples: |
+    - 休·杰克曼
+    - 休杰克曼
+    - HughJackman
+
+- synonym: 马特·达蒙MattDamon
+  examples: |
+    - 马特·达蒙
+    - 马特达蒙
+    - MattDamon
+
+- synonym: 艾德里安·布洛迪AdrienBrody
+  examples: |
+    - 艾德里安·布洛迪
+    - 艾德里安布洛迪
+    - AdrienBrody
+
+- synonym: 约翰·特拉沃尔塔JohnTra
+  examples: |
+    - 约翰·特拉沃尔塔
+    - 约翰特拉沃尔塔
+    - JohnTra
+
+- synonym: 查理·卓别林CharlesChaplin
+  examples: |
+    - 查理·卓别林
+    - 查理卓别林
+    - CharlesChaplin
+
+- synonym: 罗伯特·德尼罗RobertDeNiro
+  examples: |
+    - 罗伯特·德尼罗
+    - 罗伯特德尼罗
+    - RobertDeNiro
+
+- synonym: 约翰·库萨克JohnCusack
+  examples: |
+    - 约翰·库萨克
+    - 约翰库萨克
+    - JohnCusack
+
+- synonym: 摩根·弗里曼MorganFreeman
+  examples: |
+    - 摩根·弗里曼
+    - 摩根弗里曼
+    - MorganFreeman
+
+- synonym: 林原惠美MegumiHayashibara
+  examples: |
+    - 林原惠美
+    - 林原惠美
+    - MegumiHayashibara
+
+- synonym: 约翰尼·德普JohnnyDepp
+  examples: |
+    - 约翰尼·德普
+    - 约翰尼德普
+    - JohnnyDepp
+
+- synonym: 麦斯·米科尔森MadsMik
+  examples: |
+    - 麦斯·米科尔森
+    - 麦斯米科尔森
+    - MadsMik
+
+- synonym: 柳承龙Seung-yongRyoo
+  examples: |
+    - 柳承龙-
+    - 柳承龙
+    - SeungyongRyoo
+
+- synonym: 中谷美纪MikiNakatani
+  examples: |
+    - 中谷美纪
+    - 中谷美纪
+    - MikiNakatani
+
+- synonym: 艾米·汉莫ArmieHamme
+  examples: |
+    - 艾米·汉莫
+    - 艾米汉莫
+    - ArmieHamme
+
+- synonym: 希斯·莱杰HeathLedger
+  examples: |
+    - 希斯·莱杰
+    - 希斯莱杰
+    - HeathLedger
+
+- synonym: 伊桑·霍克EthanHawke
+  examples: |
+    - 伊桑·霍克
+    - 伊桑霍克
+    - EthanHawke
+
+- synonym: 本木雅弘MasahiroMotoki
+  examples: |
+    - 本木雅弘
+    - 本木雅弘
+    - MasahiroMotoki
+
+- synonym: 梅尔·吉布森MelGibson
+  examples: |
+    - 梅尔·吉布森
+    - 梅尔吉布森
+    - MelGibson
+
+- synonym: 布鲁斯·威利斯BruceWi
+  examples: |
+    - 布鲁斯·威利斯
+    - 布鲁斯威利斯
+    - BruceWi
+
+- synonym: 林青霞BrigitteLin
+  examples: |
+    - 林青霞
+    - 林青霞
+    - BrigitteLin
+
+- synonym: 松田洋治
+  examples: |
+    - 松田洋治
+    - 松田洋治
+    - YjiMatsuda
+
+- synonym: 黎明LeonLai
+  examples: |
+    - 黎明
+    - 黎明
+    - LeonLai
+
+- synonym: 北野武TakeshiKitano
+  examples: |
+    - 北野武
+    - 北野武
+    - TakeshiKitano
+
+- synonym: 志田未来MiraiShida
+  examples: |
+    - 志田未来
+    - 志田未来
+    - MiraiShida
+
+- synonym: 奥黛丽·塔图AudreyTau
+  examples: |
+    - 奥黛丽·塔图
+    - 奥黛丽塔图
+    - AudreyTau
+
+- synonym: 本·阿弗莱克BenAffleck
+  examples: |
+    - 本·阿弗莱克
+    - 本阿弗莱克
+    - BenAffleck
+
+- synonym: 夏雨YuXia
+  examples: |
+    - 夏雨
+    - 夏雨
+    - YuXia
+
+- synonym: 桥本爱AiHashimoto
+  examples: |
+    - 桥本爱
+    - 桥本爱
+    - AiHashimoto
+
+- synonym: 凯文·科斯特纳KevinCos
+  examples: |
+    - 凯文·科斯特纳
+    - 凯文科斯特纳
+    - KevinCos
+
+- synonym: 柳乐优弥YûyaYagira
+  examples: |
+    - 柳乐优弥û
+    - 柳乐优弥
+    - YyaYagira
+
+- synonym: 多姆纳尔·格里森DomhnallGl
+  examples: |
+    - 多姆纳尔·格里森
+    - 多姆纳尔格里森
+    - DomhnallGl
+
+- synonym: 本名阳子YoukoHonna
+  examples: |
+    - 本名阳子
+    - 本名阳子
+    - YoukoHonna
+
+- synonym: 罗夫·拉斯加德RolfLassgård
+  examples: |
+    - 罗夫·拉斯加德å
+    - 罗夫拉斯加德
+    - RolfLassgrd
+
+- synonym: 岩男润子JunkoIwao
+  examples: |
+    - 岩男润子
+    - 岩男润子
+    - JunkoIwao
+
+- synonym: 佐仓绫音AyaneSakura
+  examples: |
+    - 佐仓绫音
+    - 佐仓绫音
+    - AyaneSakura
+
+- synonym: 凯拉·奈特莉KeiraKnightley
+  examples: |
+    - 凯拉·奈特莉
+    - 凯拉奈特莉
+    - KeiraKnightley
+
+- synonym: 李政宰Jung-JaeLee
+  examples: |
+    - 李政宰-
+    - 李政宰
+    - JungJaeLee
+
+- synonym: 杰米·福克斯JamieFoxx
+  examples: |
+    - 杰米·福克斯
+    - 杰米福克斯
+    - JamieFoxx
+
+- synonym: 托妮·科莱特ToniCollette
+  examples: |
+    - 托妮·科莱特
+    - 托妮科莱特
+    - ToniCollette
+
+- synonym: 松隆子TakakoMatsu
+  examples: |
+    - 松隆子
+    - 松隆子
+    - TakakoMatsu
+
+- synonym: 梁正晖Zhenghui
+  examples: |
+    - 梁正晖
+    - 梁正晖
+    - Zhenghui
+
+- synonym: 伊万·麦克格雷格EwanMcGregor
+  examples: |
+    - 伊万·麦克格雷格
+    - 伊万麦克格雷格
+    - EwanMcGregor
+
+- synonym: 于是之ShizhiYu
+  examples: |
+    - 于是之
+    - 于是之
+    - ShizhiYu
+
+- synonym: 梁朝伟TonyLeungChiuWai
+  examples: |
+    - 梁朝伟
+    - 梁朝伟
+    - TonyLeungChiuWai
+
+- synonym: 泰伊·谢里丹TyeSheri
+  examples: |
+    - 泰伊·谢里丹
+    - 泰伊谢里丹
+    - TyeSheri
+
+- synonym: 赵文瑄WinstonChao
+  examples: |
+    - 赵文瑄
+    - 赵文瑄
+    - WinstonChao
+
+- synonym: 本尼迪克特·康伯巴奇BenedictC
+  examples: |
+    - 本尼迪克特·康伯巴奇
+    - 本尼迪克特康伯巴奇
+    - BenedictC
+
+- synonym: 沈恩京Eun-kyungShim
+  examples: |
+    - 沈恩京-
+    - 沈恩京
+    - EunkyungShim
+
+- synonym: 安德鲁·加菲尔德AndrewGarfield
+  examples: |
+    - 安德鲁·加菲尔德
+    - 安德鲁加菲尔德
+    - AndrewGarfield
+
+- synonym: 河正宇Jung-wooHa
+  examples: |
+    - 河正宇-
+    - 河正宇
+    - JungwooHa
+
+- synonym: 三船敏郎ToshirôMifune
+  examples: |
+    - 三船敏郎ô
+    - 三船敏郎
+    - ToshirMifune
+
+- synonym: 安东尼·博金斯Antho
+  examples: |
+    - 安东尼·博金斯
+    - 安东尼博金斯
+    - Antho
+
+- synonym: 神木隆之介RyûnosukeKamiki
+  examples: |
+    - 神木隆之介û
+    - 神木隆之介
+    - RynosukeKamiki
+
+- synonym: 雷·沃纳尔LeighWhannell
+  examples: |
+    - 雷·沃纳尔
+    - 雷沃纳尔
+    - LeighWhannell
+
+- synonym: 弗兰西斯·麦克多蒙德France
+  examples: |
+    - 弗兰西斯·麦克多蒙德
+    - 弗兰西斯麦克多蒙德
+    - France
+
+- synonym: 马修·麦康纳MatthewMcCon
+  examples: |
+    - 马修·麦康纳
+    - 马修麦康纳
+    - MatthewMcCon
+
+- synonym: 霍卫民WeiminHuo
+  examples: |
+    - 霍卫民
+    - 霍卫民
+    - WeiminHuo
+
+- synonym: 周润发Yun-FatChow
+  examples: |
+    - 周润发-
+    - 周润发
+    - YunFatChow
+
+- synonym: 岛本须美SumiShimamoto
+  examples: |
+    - 岛本须美
+    - 岛本须美
+    - SumiShimamoto
+
+- synonym: 唐·钱德尔DonCheadle
+  examples: |
+    - 唐·钱德尔
+    - 唐钱德尔
+    - DonCheadle
+
+- synonym: 绫濑遥HarukaAyase
+  examples: |
+    - 绫濑遥
+    - 绫濑遥
+    - HarukaAyase
+
+- synonym: 盖·皮尔斯GuyPearce
+  examples: |
+    - 盖·皮尔斯
+    - 盖皮尔斯
+    - GuyPearce
+
+- synonym: 郭涛TaoGuo
+  examples: |
+    - 郭涛
+    - 郭涛
+    - TaoGuo
+
+- synonym: 吴君如SandraNg
+  examples: |
+    - 吴君如
+    - 吴君如
+    - SandraNg
+
+- synonym: 杰昆·菲尼克斯JoaquinPhoeni
+  examples: |
+    - 杰昆·菲尼克斯
+    - 杰昆菲尼克斯
+    - JoaquinPhoeni
+
+- synonym: 仲代达矢TatsuyaNakadai
+  examples: |
+    - 仲代达矢
+    - 仲代达矢
+    - TatsuyaNakadai
+
+- synonym: 牛振华ZhenhuaN
+  examples: |
+    - 牛振华
+    - 牛振华
+    - ZhenhuaN
+
+- synonym: 达里奥·葛兰帝内提Darío
+  examples: |
+    - 达里奥·葛兰帝内提í
+    - 达里奥葛兰帝内提
+    - Daro
+
+- synonym: 凯尔·杜拉KeirDullea
+  examples: |
+    - 凯尔·杜拉
+    - 凯尔杜拉
+    - KeirDullea
+
+- synonym: 中川雅也LilyFranky
+  examples: |
+    - 中川雅也
+    - 中川雅也
+    - LilyFranky
+
+- synonym: 约翰·C·赖利JohnC.Reilly
+  examples: |
+    - 约翰··赖利.
+    - 约翰赖利
+    - CJohnCReilly
+
+- synonym: 陈冠希EdisonChen
+  examples: |
+    - 陈冠希
+    - 陈冠希
+    - EdisonChen
+
+- synonym: 迈尔斯·特勒MilesTelle
+  examples: |
+    - 迈尔斯·特勒
+    - 迈尔斯特勒
+    - MilesTelle
+
+- synonym: 梅利莎·乔治Melissa
+  examples: |
+    - 梅利莎·乔治
+    - 梅利莎乔治
+    - Melissa
+
+- synonym: 张震ChenChang
+  examples: |
+    - 张震
+    - 张震
+    - ChenChang
+
+- synonym: 高山南MinamiTakayama
+  examples: |
+    - 高山南
+    - 高山南
+    - MinamiTakayama
+
+- synonym: 杰克·尼科尔森JackNicholson
+  examples: |
+    - 杰克·尼科尔森
+    - 杰克尼科尔森
+    - JackNicholson
+
+- synonym: 江守彻ToruEmori
+  examples: |
+    - 江守彻
+    - 江守彻
+    - ToruEmori
+
+- synonym: 庄益增YizengZhuang
+  examples: |
+    - 庄益增
+    - 庄益增
+    - YizengZhuang
+
+- synonym: 山口胜平KappeiYamaguchi
+  examples: |
+    - 山口胜平
+    - 山口胜平
+    - KappeiYamaguchi
+
+- synonym: 休·格兰特HughGrant
+  examples: |
+    - 休·格兰特
+    - 休格兰特
+    - HughGrant
+
+- synonym: 娜塔莉·波特曼Natalie
+  examples: |
+    - 娜塔莉·波特曼
+    - 娜塔莉波特曼
+    - Natalie
+
+- synonym: 多布杰Duobujie
+  examples: |
+    - 多布杰
+    - 多布杰
+    - Duobujie
+
+- synonym: 杰克·吉伦哈尔JakeGyllenhaal
+  examples: |
+    - 杰克·吉伦哈尔
+    - 杰克吉伦哈尔
+    - JakeGyllenhaal
+
+- synonym: 达斯汀·霍夫曼DustinHoffman
+  examples: |
+    - 达斯汀·霍夫曼
+    - 达斯汀霍夫曼
+    - DustinHoffman
+
+- synonym: 卡西·阿弗莱克CaseyAffle
+  examples: |
+    - 卡西·阿弗莱克
+    - 卡西阿弗莱克
+    - CaseyAffle
+
+- synonym: 瑞恩·高斯林RyanGosling
+  examples: |
+    - 瑞恩·高斯林
+    - 瑞恩高斯林
+    - RyanGosling
+
+- synonym: 拉米·马雷克RamiMalek
+  examples: |
+    - 拉米·马雷克
+    - 拉米马雷克
+    - RamiMalek
+
+- synonym: 海利·乔·奥斯蒙Haley
+  examples: |
+    - 海利·乔·奥斯蒙
+    - 海利乔奥斯蒙
+    - Haley
+
+- synonym: 张曼玉MaggieCheung
+  examples: |
+    - 张曼玉
+    - 张曼玉
+    - MaggieCheung
+
+- synonym: 路易·德·菲耐斯LouisdeFuns
+  examples: |
+    - 路易·德·菲耐斯
+    - 路易德菲耐斯
+    - LouisdeFuns
+
+- synonym: 阿诺·施瓦辛格ArnoldSchwarz
+  examples: |
+    - 阿诺·施瓦辛格
+    - 阿诺施瓦辛格
+    - ArnoldSchwarz
+
+- synonym: 汤姆·哈迪TomHardy
+  examples: |
+    - 汤姆·哈迪
+    - 汤姆哈迪
+    - TomHardy
+
+- synonym: 吉娜·戴维斯GeenaDavis
+  examples: |
+    - 吉娜·戴维斯
+    - 吉娜戴维斯
+    - GeenaDavis
+
+- synonym: 奈良柚莉爱YuriaNara
+  examples: |
+    - 奈良柚莉爱
+    - 奈良柚莉爱
+    - YuriaNara
+
+- synonym: 布拉德·皮特BradPitt
+  examples: |
+    - 布拉德·皮特
+    - 布拉德皮特
+    - BradPitt
+
+- synonym: 艾米丽·芭尔多尼Em
+  examples: |
+    - 艾米丽·芭尔多尼
+    - 艾米丽芭尔多尼
+    - Em
+
+- synonym: 雅各布·特伦布莱JacobT
+  examples: |
+    - 雅各布·特伦布莱
+    - 雅各布特伦布莱
+    - JacobT
+
+- synonym: 菅田将晖MasakiSuda
+  examples: |
+    - 菅田将晖
+    - 菅田将晖
+    - MasakiSuda
+
+- synonym: 刘晓庆XiaoqingLiu
+  examples: |
+    - 刘晓庆
+    - 刘晓庆
+    - XiaoqingLiu
+
+- synonym: 尼古拉斯·凯奇NicolasCage
+  examples: |
+    - 尼古拉斯·凯奇
+    - 尼古拉斯凯奇
+    - NicolasCage
+
+- synonym: 阿部宽HiroshiAbe
+  examples: |
+    - 阿部宽
+    - 阿部宽
+    - HiroshiAbe
+
+- synonym: 布丽·拉尔森BrieLarson
+  examples: |
+    - 布丽·拉尔森
+    - 布丽拉尔森
+    - BrieLarson
+
+- synonym: 费雯·丽VivienLeigh
+  examples: |
+    - 费雯·丽
+    - 费雯丽
+    - VivienLeigh
+
+- synonym: 庄司美代子MiyokoShôji
+  examples: |
+    - 庄司美代子ô
+    - 庄司美代子
+    - MiyokoShji
+
+- synonym: 桑德拉·布洛克SandraBu
+  examples: |
+    - 桑德拉·布洛克
+    - 桑德拉布洛克
+    - SandraBu
+
+- synonym: 本·斯蒂勒BenStiller
+  examples: |
+    - 本·斯蒂勒
+    - 本斯蒂勒
+    - BenStiller
+
+- synonym: 凯特·温丝莱特KateWinslet
+  examples: |
+    - 凯特·温丝莱特
+    - 凯特温丝莱特
+    - KateWinslet
+
+- synonym: 本·卫肖BenWhishaw
+  examples: |
+    - 本·卫肖
+    - 本卫肖
+    - BenWhishaw
+
+- synonym: 马尔科姆·麦克道威尔Malc
+  examples: |
+    - 马尔科姆·麦克道威尔
+    - 马尔科姆麦克道威尔
+    - Malc
+
+- synonym: 弗兰克·德拉邦特FrankDarabont
+  examples: |
+    - 弗兰克·德拉邦特
+    - 弗兰克德拉邦特
+    - FrankDarabont
+
+- synonym: 陈凯歌KaigeChen
+  examples: |
+    - 陈凯歌
+    - 陈凯歌
+    - KaigeChen
+
+- synonym: 罗伯特·泽米吉斯RobertZemeckis
+  examples: |
+    - 罗伯特·泽米吉斯
+    - 罗伯特泽米吉斯
+    - RobertZemeckis
+
+- synonym: 詹姆斯·卡梅隆JamesCameron
+  examples: |
+    - 詹姆斯·卡梅隆
+    - 詹姆斯卡梅隆
+    - JamesCameron
+
+- synonym: 吕克·贝松LucBesson
+  examples: |
+    - 吕克·贝松
+    - 吕克贝松
+    - LucBesson
+
+- synonym: 宫崎骏HayaoMiyazaki
+  examples: |
+    - 宫崎骏
+    - 宫崎骏
+    - HayaoMiyazaki
+
+- synonym: 罗伯托·贝尼尼RobertoBenigni
+  examples: |
+    - 罗伯托·贝尼尼
+    - 罗伯托贝尼尼
+    - RobertoBenigni
+
+- synonym: 史蒂文·斯皮尔伯格StevenSpielberg
+  examples: |
+    - 史蒂文·斯皮尔伯格
+    - 史蒂文斯皮尔伯格
+    - StevenSpielberg
+
+- synonym: 克里斯托弗·诺兰ChristopherNolan
+  examples: |
+    - 克里斯托弗·诺兰
+    - 克里斯托弗诺兰
+    - ChristopherNolan
+
+- synonym: 彼得·威尔PeterWeir
+  examples: |
+    - 彼得·威尔
+    - 彼得威尔
+    - PeterWeir
+
+- synonym: 莱塞·霍尔斯道姆LasseHallström
+  examples: |
+    - 莱塞·霍尔斯道姆ö
+    - 莱塞霍尔斯道姆
+    - LasseHallstrm
+
+- synonym: 朱塞佩·托纳多雷GiuseppeTornatore
+  examples: |
+    - 朱塞佩·托纳多雷
+    - 朱塞佩托纳多雷
+    - GiuseppeTornatore
+
+- synonym: 拉库马·希拉尼RajkumarHirani
+  examples: |
+    - 拉库马·希拉尼
+    - 拉库马希拉尼
+    - RajkumarHirani
+
+- synonym: 克里斯托夫·巴拉蒂ChristopheBarratier
+  examples: |
+    - 克里斯托夫·巴拉蒂
+    - 克里斯托夫巴拉蒂
+    - ChristopheBarratier
+
+- synonym: 安德鲁·斯坦顿AndrewStanton
+  examples: |
+    - 安德鲁·斯坦顿
+    - 安德鲁斯坦顿
+    - AndrewStanton
+
+- synonym: 拜伦·霍华德ByronHoward
+  examples: |
+    - 拜伦·霍华德
+    - 拜伦霍华德
+    - ByronHoward
+
+- synonym: 比利·怀尔德BillyWilder
+  examples: |
+    - 比利·怀尔德
+    - 比利怀尔德
+    - BillyWilder
+
+- synonym: 刘镇伟JeffreyLau
+  examples: |
+    - 刘镇伟
+    - 刘镇伟
+    - JeffreyLau
+
+- synonym: 黄东赫Dong-hyukHwang
+  examples: |
+    - 黄东赫-
+    - 黄东赫
+    - DonghyukHwang
+
+- synonym: 弗朗西斯·福特·科波拉FrancisFordCoppola
+  examples: |
+    - 弗朗西斯·福特·科波拉
+    - 弗朗西斯福特科波拉
+    - FrancisFordCoppola
+
+- synonym: 奥利维·那卡什OlivierNakache
+  examples: |
+    - 奥利维·那卡什
+    - 奥利维那卡什
+    - OlivierNakache
+
+- synonym: 加布里尔·穆奇诺GabrieleMuccino
+  examples: |
+    - 加布里尔·穆奇诺
+    - 加布里尔穆奇诺
+    - GabrieleMuccino
+
+- synonym: 贝纳尔多·贝托鲁奇BernardoBertolucci
+  examples: |
+    - 贝纳尔多·贝托鲁奇
+    - 贝纳尔多贝托鲁奇
+    - BernardoBertolucci
+
+- synonym: 罗伯·莱纳RobReiner
+  examples: |
+    - 罗伯·莱纳
+    - 罗伯莱纳
+    - RobReiner
+
+- synonym: 李·昂克里奇LeeUnkrich
+  examples: |
+    - 李·昂克里奇
+    - 李昂克里奇
+    - LeeUnkrich
+
+- synonym: 张艺谋YimouZhang
+  examples: |
+    - 张艺谋
+    - 张艺谋
+    - YimouZhang
+
+- synonym: 彼得·杰克逊PeterJackson
+  examples: |
+    - 彼得·杰克逊
+    - 彼得杰克逊
+    - PeterJackson
+
+- synonym: 文牧野MuyeWen
+  examples: |
+    - 文牧野
+    - 文牧野
+    - MuyeWen
+
+- synonym: 维克多·弗莱明VictorFleming
+  examples: |
+    - 维克多·弗莱明
+    - 维克多弗莱明
+    - VictorFleming
+
+- synonym: 彼特·道格特PeteDocter
+  examples: |
+    - 彼特·道格特
+    - 彼特道格特
+    - PeteDocter
+
+- synonym: 李濬益Jun-ikLee
+  examples: |
+    - 李濬益-
+    - 李濬益
+    - JunikLee
+
+- synonym: 娜丁·拉巴基NadineLabaki
+  examples: |
+    - 娜丁·拉巴基
+    - 娜丁拉巴基
+    - NadineLabaki
+
+- synonym: 涅提·蒂瓦里NiteshTiwari
+  examples: |
+    - 涅提·蒂瓦里
+    - 涅提蒂瓦里
+    - NiteshTiwari
+
+- synonym: 姜文WenJiang
+  examples: |
+    - 姜文
+    - 姜文
+    - WenJiang
+
+- synonym: 李安AngLee
+  examples: |
+    - 李安
+    - 李安
+    - AngLee
+
+- synonym: 阿兰·葛斯彭纳AlainGsponer
+  examples: |
+    - 阿兰·葛斯彭纳
+    - 阿兰葛斯彭纳
+    - AlainGsponer
+
+- synonym: 罗曼·波兰斯基RomanPolanski
+  examples: |
+    - 罗曼·波兰斯基
+    - 罗曼波兰斯基
+    - RomanPolanski
+
+- synonym: 马丁·布莱斯MartinBrest
+  examples: |
+    - 马丁·布莱斯
+    - 马丁布莱斯
+    - MartinBrest
+
+- synonym: 威廉·惠勒WilliamWyler
+  examples: |
+    - 威廉·惠勒
+    - 威廉惠勒
+    - WilliamWyler
+
+- synonym: 彼得·法雷里PeterFarrelly
+  examples: |
+    - 彼得·法雷里
+    - 彼得法雷里
+    - PeterFarrelly
+
+- synonym: 万籁鸣LaimingWan
+  examples: |
+    - 万籁鸣
+    - 万籁鸣
+    - LaimingWan
+
+- synonym: 安迪·沃卓斯基AndyWachowski
+  examples: |
+    - 安迪·沃卓斯基
+    - 安迪沃卓斯基
+    - AndyWachowski
+
+- synonym: 杨宇硕Woo-seokYang
+  examples: |
+    - 杨宇硕-
+    - 杨宇硕
+    - WooseokYang
+
+- synonym: 大卫·芬奇DavidFincher
+  examples: |
+    - 大卫·芬奇
+    - 大卫芬奇
+    - DavidFincher
+
+- synonym: 朗·霍华德RonHoward
+  examples: |
+    - 朗·霍华德
+    - 朗霍华德
+    - RonHoward
+
+- synonym: 马克·赫尔曼MarkHerman
+  examples: |
+    - 马克·赫尔曼
+    - 马克赫尔曼
+    - MarkHerman
+
+- synonym: 弗洛里安·亨克尔·冯·多纳斯马尔克FlorianHenckelvonDonnersmarck  &amp;n...<br
+  examples: |
+    - 弗洛里安·亨克尔·冯·多纳斯马尔克  &;...<
+    - 弗洛里安亨克尔冯多纳斯马尔克
+    - FlorianHenckelvonDonnersmarckampnbr
+
+- synonym: 岩井俊二ShunjiIwai
+  examples: |
+    - 岩井俊二
+    - 岩井俊二
+    - ShunjiIwai
+
+- synonym: 盖·里奇GuyRitchie
+  examples: |
+    - 盖·里奇
+    - 盖里奇
+    - GuyRitchie
+
+- synonym: 罗伯特·怀斯RobertWise
+  examples: |
+    - 罗伯特·怀斯
+    - 罗伯特怀斯
+    - RobertWise
+
+- synonym: 奥里奥尔·保罗OriolPaulo
+  examples: |
+    - 奥里奥尔·保罗
+    - 奥里奥尔保罗
+    - OriolPaulo
+
+- synonym: 大卫·叶茨DavidYates
+  examples: |
+    - 大卫·叶茨
+    - 大卫叶茨
+    - DavidYates
+
+- synonym: 米洛斯·福尔曼MilošForman
+  examples: |
+    - 米洛斯·福尔曼š
+    - 米洛斯福尔曼
+    - MiloForman
+
+- synonym: 马基德·马基迪MajidMajidi
+  examples: |
+    - 马基德·马基迪
+    - 马基德马基迪
+    - MajidMajidi
+
+- synonym: 乔纳森·戴米JonathanDemme
+  examples: |
+    - 乔纳森·戴米
+    - 乔纳森戴米
+    - JonathanDemme
+
+- synonym: 韦斯·安德森WesAnderson
+  examples: |
+    - 韦斯·安德森
+    - 韦斯安德森
+    - WesAnderson
+
+- synonym: 周星驰StephenChow
+  examples: |
+    - 周星驰
+    - 周星驰
+    - StephenChow
+
+- synonym: 埃里克·布雷斯EricBress
+  examples: |
+    - 埃里克·布雷斯
+    - 埃里克布雷斯
+    - EricBress
+
+- synonym: AlfonsoCuarón
+  examples: |
+    - ó
+    - 
+    - AlfonsoCuarn
+
+- synonym: 格斯·范·桑特GusVanSant
+  examples: |
+    - 格斯·范·桑特
+    - 格斯范桑特
+    - GusVanSant
+
+- synonym: 路易·西霍尤斯LouiePsihoyos
+  examples: |
+    - 路易·西霍尤斯
+    - 路易西霍尤斯
+    - LouiePsihoyos
+
+- synonym: 托尼·凯耶TonyKaye
+  examples: |
+    - 托尼·凯耶
+    - 托尼凯耶
+    - TonyKaye
+
+- synonym: 昆汀·塔伦蒂诺QuentinTarantino
+  examples: |
+    - 昆汀·塔伦蒂诺
+    - 昆汀塔伦蒂诺
+    - QuentinTarantino
+
+- synonym: 王家卫KarWaiWong
+  examples: |
+    - 王家卫
+    - 王家卫
+    - KarWaiWong
+
+- synonym: 查理·卓别林CharlesChaplin
+  examples: |
+    - 查理·卓别林
+    - 查理卓别林
+    - CharlesChaplin
+
+- synonym: 赛尔乔·莱翁内SergioLeone
+  examples: |
+    - 赛尔乔·莱翁内
+    - 赛尔乔莱翁内
+    - SergioLeone
+
+- synonym: 詹姆斯·曼高德JamesMangold
+  examples: |
+    - 詹姆斯·曼高德
+    - 詹姆斯曼高德
+    - JamesMangold
+
+- synonym: 奉俊昊Joon-hoBong
+  examples: |
+    - 奉俊昊-
+    - 奉俊昊
+    - JoonhoBong
+
+- synonym: 今敏SatoshiKon
+  examples: |
+    - 今敏
+    - 今敏
+    - SatoshiKon
+
+- synonym: 戈尔·维宾斯基GoreVerbinski
+  examples: |
+    - 戈尔·维宾斯基
+    - 戈尔维宾斯基
+    - GoreVerbinski
+
+- synonym: 杨德昌EdwardYang
+  examples: |
+    - 杨德昌
+    - 杨德昌
+    - EdwardYang
+
+- synonym: 托马斯·温特伯格ThomasVinterberg
+  examples: |
+    - 托马斯·温特伯格
+    - 托马斯温特伯格
+    - ThomasVinterberg
+
+- synonym: 李力持Lik-ChiLee
+  examples: |
+    - 李力持-
+    - 李力持
+    - LikChiLee
+
+- synonym: 李焕庆Hwan-kyeongLee
+  examples: |
+    - 李焕庆-
+    - 李焕庆
+    - HwankyeongLee
+
+- synonym: 中岛哲也TetsuyaNakashima
+  examples: |
+    - 中岛哲也
+    - 中岛哲也
+    - TetsuyaNakashima
+
+- synonym: 卢卡·瓜达尼诺LucaGuadagnino
+  examples: |
+    - 卢卡·瓜达尼诺
+    - 卢卡瓜达尼诺
+    - LucaGuadagnino
+
+- synonym: 蒂姆·波顿TimBurton
+  examples: |
+    - 蒂姆·波顿
+    - 蒂姆波顿
+    - TimBurton
+
+- synonym: 理查德·林克莱特RichardLinklater
+  examples: |
+    - 理查德·林克莱特
+    - 理查德林克莱特
+    - RichardLinklater
+
+- synonym: 泷田洋二郎YôjirôTakita
+  examples: |
+    - 泷田洋二郎ôô
+    - 泷田洋二郎
+    - YjirTakita
+
+- synonym: 梅尔·吉布森MelGibson
+  examples: |
+    - 梅尔·吉布森
+    - 梅尔吉布森
+    - MelGibson
+
+- synonym: M·奈特·沙马兰M.NightShyamalan
+  examples: |
+    - ·奈特·沙马兰.
+    - 奈特沙马兰
+    - MMNightShyamalan
+
+- synonym: 唐·霍尔DonHall
+  examples: |
+    - 唐·霍尔
+    - 唐霍尔
+    - DonHall
+
+- synonym: 陈可辛PeterChan
+  examples: |
+    - 陈可辛
+    - 陈可辛
+    - PeterChan
+
+- synonym: 北野武TakeshiKitano
+  examples: |
+    - 北野武
+    - 北野武
+    - TakeshiKitano
+
+- synonym: 米林宏昌HiromasaYonebayashi
+  examples: |
+    - 米林宏昌
+    - 米林宏昌
+    - HiromasaYonebayashi
+
+- synonym: 让-皮埃尔·热内Jean-PierreJeunet
+  examples: |
+    - 让-皮埃尔·热内-
+    - 让皮埃尔热内
+    - JeanPierreJeunet
+
+- synonym: 森淳一JunichiMori
+  examples: |
+    - 森淳一
+    - 森淳一
+    - JunichiMori
+
+- synonym: 克林特·伊斯特伍德ClintEastwood
+  examples: |
+    - 克林特·伊斯特伍德
+    - 克林特伊斯特伍德
+    - ClintEastwood
+
+- synonym: 是枝裕和HirokazuKoreeda
+  examples: |
+    - 是枝裕和
+    - 是枝裕和
+    - HirokazuKoreeda
+
+- synonym: 程小东Siu-TungChing
+  examples: |
+    - 程小东-
+    - 程小东
+    - SiuTungChing
+
+- synonym: 理查德·柯蒂斯RichardCurtis
+  examples: |
+    - 理查德·柯蒂斯
+    - 理查德柯蒂斯
+    - RichardCurtis
+
+- synonym: 近藤喜文YoshifumiKondo
+  examples: |
+    - 近藤喜文
+    - 近藤喜文
+    - YoshifumiKondo
+
+- synonym: 迪恩·德布洛斯DeanDeBlois
+  examples: |
+    - 迪恩·德布洛斯
+    - 迪恩德布洛斯
+    - DeanDeBlois
+
+- synonym: 汉内斯·赫尔姆HannesHolm
+  examples: |
+    - 汉内斯·赫尔姆
+    - 汉内斯赫尔姆
+    - HannesHolm
+
+- synonym: 迈克·内威尔MikeNewell
+  examples: |
+    - 迈克·内威尔
+    - 迈克内威尔
+    - MikeNewell
+
+- synonym: 大森贵弘TakahiroOmori
+  examples: |
+    - 大森贵弘
+    - 大森贵弘
+    - TakahiroOmori
+
+- synonym: 乔·怀特JoeWright
+  examples: |
+    - 乔·怀特
+    - 乔怀特
+    - JoeWright
+
+- synonym: 朴勋政Hoon-jungPark
+  examples: |
+    - 朴勋政-
+    - 朴勋政
+    - HoonjungPark
+
+- synonym: 延尚昊Sang-hoYeon
+  examples: |
+    - 延尚昊-
+    - 延尚昊
+    - SanghoYeon
+
+- synonym: 皮艾尔·柯芬PierreCoffin
+  examples: |
+    - 皮艾尔·柯芬
+    - 皮艾尔柯芬
+    - PierreCoffin
+
+- synonym: 亚当·艾略特AdamElliot
+  examples: |
+    - 亚当·艾略特
+    - 亚当艾略特
+    - AdamElliot
+
+- synonym: 王树忱ShuchenWang
+  examples: |
+    - 王树忱
+    - 王树忱
+    - ShuchenWang
+
+- synonym: 谢添TianXie
+  examples: |
+    - 谢添
+    - 谢添
+    - TianXie
+
+- synonym: 王晶JingWong
+  examples: |
+    - 王晶
+    - 王晶
+    - JingWong
+
+- synonym: 莫滕·泰杜姆MortenTyldum
+  examples: |
+    - 莫滕·泰杜姆
+    - 莫滕泰杜姆
+    - MortenTyldum
+
+- synonym: 姜炯哲Hyeong-CheolKang
+  examples: |
+    - 姜炯哲-
+    - 姜炯哲
+    - HyeongCheolKang
+
+- synonym: 杰茜·尼尔森JessieNelson
+  examples: |
+    - 杰茜·尼尔森
+    - 杰茜尼尔森
+    - JessieNelson
+
+- synonym: 金秉祐Byeong-wooKim
+  examples: |
+    - 金秉祐-
+    - 金秉祐
+    - ByeongwooKim
+
+- synonym: 黑泽明AkiraKurosawa
+  examples: |
+    - 黑泽明
+    - 黑泽明
+    - AkiraKurosawa
+
+- synonym: 阿尔弗雷德·希区柯克AlfredHitchcock
+  examples: |
+    - 阿尔弗雷德·希区柯克
+    - 阿尔弗雷德希区柯克
+    - AlfredHitchcock
+
+- synonym: 拉娜·沃卓斯基LanaWachowski
+  examples: |
+    - 拉娜·沃卓斯基
+    - 拉娜沃卓斯基
+    - LanaWachowski
+
+- synonym: 新海诚MakotoShinkai
+  examples: |
+    - 新海诚
+    - 新海诚
+    - MakotoShinkai
+
+- synonym: 詹姆斯·温JamesWan
+  examples: |
+    - 詹姆斯·温
+    - 詹姆斯温
+    - JamesWan
+
+- synonym: 马丁·麦克唐纳MartinMcDonagh
+  examples: |
+    - 马丁·麦克唐纳
+    - 马丁麦克唐纳
+    - MartinMcDonagh
+
+- synonym: 让-马克·瓦雷Jean-MarcVallée
+  examples: |
+    - 让-马克·瓦雷-é
+    - 让马克瓦雷
+    - JeanMarcValle
+
+- synonym: 科克·德·米科KirkDeMicco
+  examples: |
+    - 科克·德·米科
+    - 科克德米科
+    - KirkDeMicco
+
+- synonym: 忻钰坤YukunXin
+  examples: |
+    - 忻钰坤
+    - 忻钰坤
+    - YukunXin
+
+- synonym: 保罗·格林格拉斯PaulGreengrass
+  examples: |
+    - 保罗·格林格拉斯
+    - 保罗格林格拉斯
+    - PaulGreengrass
+
+- synonym: 吴宇森JohnWoo
+  examples: |
+    - 吴宇森
+    - 吴宇森
+    - JohnWoo
+
+- synonym: 费尔南多·梅里尔斯FernandoMeirelles
+  examples: |
+    - 费尔南多·梅里尔斯
+    - 费尔南多梅里尔斯
+    - FernandoMeirelles
+
+- synonym: 特瑞·乔治TerryGeorge
+  examples: |
+    - 特瑞·乔治
+    - 特瑞乔治
+    - TerryGeorge
+
+- synonym: 宁浩HaoNing
+  examples: |
+    - 宁浩
+    - 宁浩
+    - HaoNing
+
+- synonym: 罗启锐AlexLaw
+  examples: |
+    - 罗启锐
+    - 罗启锐
+    - AlexLaw
+
+- synonym: 托德·菲利普斯ToddPhillips
+  examples: |
+    - 托德·菲利普斯
+    - 托德菲利普斯
+    - ToddPhillips
+
+- synonym: 神山征二郎SeijirôKôyama
+  examples: |
+    - 神山征二郎ôô
+    - 神山征二郎
+    - SeijirKyama
+
+- synonym: 斯坦利·多南StanleyDonen
+  examples: |
+    - 斯坦利·多南
+    - 斯坦利多南
+    - StanleyDonen
+
+- synonym: 黄建新JianxinHuang
+  examples: |
+    - 黄建新
+    - 黄建新
+    - JianxinHuang
+
+- synonym: 达米安·斯兹弗隆DamiánSzifron
+  examples: |
+    - 达米安·斯兹弗隆á
+    - 达米安斯兹弗隆
+    - DaminSzifron
+
+- synonym: 斯坦利·库布里克StanleyKubrick
+  examples: |
+    - 斯坦利·库布里克
+    - 斯坦利库布里克
+    - StanleyKubrick
+
+- synonym: 瑞奇·莫尔RichMoore
+  examples: |
+    - 瑞奇·莫尔
+    - 瑞奇莫尔
+    - RichMoore
+
+- synonym: 达米恩·查泽雷DamienChazelle
+  examples: |
+    - 达米恩·查泽雷
+    - 达米恩查泽雷
+    - DamienChazelle
+
+- synonym: 卡洛斯·沙尔丹哈CarlosSaldanha
+  examples: |
+    - 卡洛斯·沙尔丹哈
+    - 卡洛斯沙尔丹哈
+    - CarlosSaldanha
+
+- synonym: 丹尼·鲍尔DannyBoyle
+  examples: |
+    - 丹尼·鲍尔
+    - 丹尼鲍尔
+    - DannyBoyle
+
+- synonym: 克里斯托弗·史密斯ChristopherSmith
+  examples: |
+    - 克里斯托弗·史密斯
+    - 克里斯托弗史密斯
+    - ChristopherSmith
+
+- synonym: 黄信尧Hsin-yaoHuang
+  examples: |
+    - 黄信尧-
+    - 黄信尧
+    - HsinyaoHuang
+
+- synonym: 藤森雅也MasayaFujimori
+  examples: |
+    - 藤森雅也
+    - 藤森雅也
+    - MasayaFujimori
+
+- synonym: 达伦·阿罗诺夫斯基DarrenAronofsky
+  examples: |
+    - 达伦·阿罗诺夫斯基
+    - 达伦阿罗诺夫斯基
+    - DarrenAronofsky
+
+- synonym: 陆川ChuanLu
+  examples: |
+    - 陆川
+    - 陆川
+    - ChuanLu
+
+- synonym: 邓肯·琼斯DuncanJones
+  examples: |
+    - 邓肯·琼斯
+    - 邓肯琼斯
+    - DuncanJones
+
+- synonym: 巴瑞·莱文森BarryLevinson
+  examples: |
+    - 巴瑞·莱文森
+    - 巴瑞莱文森
+    - BarryLevinson
+
+- synonym: 肯尼斯·罗纳根KennethLonergan
+  examples: |
+    - 肯尼斯·罗纳根
+    - 肯尼斯罗纳根
+    - KennethLonergan
+
+- synonym: 尼克·卡索维茨NickCassavetes
+  examples: |
+    - 尼克·卡索维茨
+    - 尼克卡索维茨
+    - NickCassavetes
+
+- synonym: 普特鹏·普罗萨卡·那·萨克那卡林PuttipongPromsakaNaSakolnakorn
+  examples: |
+    - 普特鹏·普罗萨卡·那·萨克那卡林
+    - 普特鹏普罗萨卡那萨克那卡林
+    - PuttipongPromsakaNaSakolnakorn
+
+- synonym: 布莱恩·辛格BryanSinger
+  examples: |
+    - 布莱恩·辛格
+    - 布莱恩辛格
+    - BryanSinger
+
+- synonym: 徐克HarkTsui
+  examples: |
+    - 徐克
+    - 徐克
+    - HarkTsui
+
+- synonym: 杰拉尔·乌里GérardOury
+  examples: |
+    - 杰拉尔·乌里é
+    - 杰拉尔乌里
+    - GrardOury
+
+- synonym: 乔治·米勒GeorgeMiller
+  examples: |
+    - 乔治·米勒
+    - 乔治米勒
+    - GeorgeMiller
+
+- synonym: 李惠民RaymondLee
+  examples: |
+    - 李惠民
+    - 李惠民
+    - RaymondLee
+
+- synonym: 雷德利·斯科特RidleyScott
+  examples: |
+    - 雷德利·斯科特
+    - 雷德利斯科特
+    - RidleyScott
+
+- synonym: 高畑勋IsaoTakahata
+  examples: |
+    - 高畑勋
+    - 高畑勋
+    - IsaoTakahata
+
+- synonym: 安德鲁·尼科尔AndrewNiccol
+  examples: |
+    - 安德鲁·尼科尔
+    - 安德鲁尼科尔
+    - AndrewNiccol
+
+- synonym: 詹姆斯·沃德·布柯特JamesWardByrkit
+  examples: |
+    - 詹姆斯·沃德·布柯特
+    - 詹姆斯沃德布柯特
+    - JamesWardByrkit
+
+- synonym: 斯蒂芬·卓博斯基StephenChbosky
+  examples: |
+    - 斯蒂芬·卓博斯基
+    - 斯蒂芬卓博斯基
+    - StephenChbosky
+
+- synonym: 土井裕泰NobuhiroDoi
+  examples: |
+    - 土井裕泰
+    - 土井裕泰
+    - NobuhiroDoi
+
+- synonym: 郭柯KeGuo
+  examples: |
+    - 郭柯
+    - 郭柯
+    - KeGuo
+
+- synonym: 谢晋JinXie
+  examples: |
+    - 谢晋
+    - 谢晋
+    - JinXie
+
+- synonym: 爱德华·兹威克EdwardZwick
+  examples: |
+    - 爱德华·兹威克
+    - 爱德华兹威克
+    - EdwardZwick
+
+- synonym: 伦尼·阿伯拉罕森LennyAbrahamson
+  examples: |
+    - 伦尼·阿伯拉罕森
+    - 伦尼阿伯拉罕森
+    - LennyAbrahamson
+
+- synonym: 茂文·勒鲁瓦MervynLeRoy
+  examples: |
+    - 茂文·勒鲁瓦
+    - 茂文勒鲁瓦
+    - MervynLeRoy
+
+- synonym: 约翰·李·汉考克JohnLeeHancock
+  examples: |
+    - 约翰·李·汉考克
+    - 约翰李汉考克
+    - JohnLeeHancock
+
+- synonym: 本·斯蒂勒BenStiller
+  examples: |
+    - 本·斯蒂勒
+    - 本斯蒂勒
+    - BenStiller
+
+- synonym: 道格·里曼DougLiman
+  examples: |
+    - 道格·里曼
+    - 道格里曼
+    - DougLiman
+
+- synonym: 史蒂芬·戴德利StephenDaldry
+  examples: |
+    - 史蒂芬·戴德利
+    - 史蒂芬戴德利
+    - StephenDaldry
+
+- synonym: 鲍勃·佩尔西凯蒂BobPersichetti
+  examples: |
+    - 鲍勃·佩尔西凯蒂
+    - 鲍勃佩尔西凯蒂
+    - BobPersichetti
+
+- synonym: 约翰·卡尼JohnCarney
+  examples: |
+    - 约翰·卡尼
+    - 约翰卡尼
+    - JohnCarney
+
+- synonym: 汤姆·提克威TomTykwer
+  examples: |
+    - 汤姆·提克威
+    - 汤姆提克威
+    - TomTykwer
+
+## 类型
+- synonym: 犯罪
+  examples: |
+    - 犯罪片
+    - 犯罪剧
+    - 犯罪电影
+- synonym: 剧情
+  examples: |
+    - 剧情片
+    - 剧情剧
+    - 剧情电影
+- synonym: 科幻
+  examples: |
+    - 科幻片
+    - 科幻剧
+    - 科幻电影
+- synonym: 喜剧
+  examples: |
+    - 喜剧片
+    - 喜剧剧
+    - 喜剧电影
+- synonym: 动画
+  examples: |
+    - 动画片
+    - 动画剧
+    - 动画电影
+- synonym: 奇幻
+  examples: |
+    - 奇幻片
+    - 奇幻剧
+    - 奇幻电影
+- synonym: 传记
+  examples: |
+    - 传记片
+    - 传记剧
+    - 传记电影
+- synonym: 动作
+  examples: |
+    - 动作片
+    - 动作剧
+    - 动作电影
+- synonym: 纪录片
+  examples: |
+    - 纪录片电影
+- synonym: 爱情
+  examples: |
+    - 爱情片
+    - 爱情剧
+    - 爱情电影
+- synonym: 悬疑
+  examples: |
+    - 悬疑片
+    - 悬疑剧
+    - 悬疑电影
+- synonym: 儿童
+  examples: |
+    - 儿童片
+    - 儿童剧
+    - 儿童电影
+- synonym: 冒险
+  examples: |
+    - 冒险片
+    - 冒险剧
+    - 冒险电影
+
+- synonym: 中国大陆
+  examples: |
+    - 大陆
+    - 中国
+    - 内地
+    - 国内
+
+- synonym: 中国香港
+  examples: |
+    - 香港
+
+- synonym: 中国台湾
+  examples: |
+    - 台湾
+
+# 查找表字段
+- lookup: actors
+  examples: |
+    - 蒂姆·罗宾斯TimRobbins
+    - 张国荣LeslieCheung
+    - 汤姆·汉克斯TomHanks
+    - 莱昂纳多·迪卡普里奥Leonardo
+    - 让·雷诺JeanReno
+    - 柊瑠美RumiHîragi
+    - 连姆·尼森LiamNeeson
+    - 金·凯瑞JimCarrey
+    - 理查·基尔RichardGe
+    - 蒂姆·罗斯TimRoth
+    - 阿米尔·汗AamirKhan
+    - 让-巴蒂斯特·莫尼
+    - 本·贝尔特BenBurtt
+    - 刘德华AndyLau
+    - 金妮弗·
+    - 泰隆·鲍华TyronePower
+    - 周星驰StephenChow
+    - 孔侑YooGong
+    - 马龙·白兰度M
+    - 演职人员不详
+    - 威尔·史密斯WillSmith
+    - 尊龙JohnLone
+    - 日高法子NorikoHidaka
+    - 玛德琳·卡罗尔MadelineCarroll
+    - 葛优YouGe
+    - 克里斯蒂安·贝尔Christ
+    - DanielRadcliffe
+    - 伊利亚·伍德ElijahWood
+    - 徐峥ZhengXu
+    - 费
+    - 爱德
+    - 薛景求Kyung-guSol
+    - 倍赏千惠子ChiekoBaishô
+    - 亨利·方达HenryFonda
+    - 扎因·拉费阿Zainal-Rafeea
+    - 姜文WenJiang
+    - 田中真弓MayumiTanaka
+    - 苏拉·沙玛SurajSharma
+    - 阿努克·斯特芬AnukSteffen
+    - 阿尔·帕西诺AlPacino
+    - 奥黛丽·赫本AudreyHepburn
+    - 罗宾·威廉姆斯RobinWilliams
+    - 菲利普·努瓦雷Philipp
+    - 维果·莫腾森ViggoMortensen
+    - 邱岳峰YuefengQiu
+    - 乔纳森·泰勒·托马
+    - 宋康昊Kang-hoSong
+    - 郎雄SihungLung
+    - 爱德华·诺顿EdwardNorton
+    - 罗素·克劳RussellCrowe
+    - 凯特·布兰切特CateBlanchett
+    - 阿萨·巴特菲尔德AsaButterfield
+    - 中山美穗MihoNakayama
+    - 杰森·弗莱明JasonFlemyng
+    - 莫妮卡·贝鲁奇Monica
+    - 朱莉·安德鲁斯JulieAndrews
+    - 马里奥·卡萨斯MarioCasas
+    - 萨姆·沃辛顿SamWorthington
+    - 丹尼尔·雷德克里夫DanielRadcliffe
+    - 默罕默德·阿米尔·纳吉Mohamma
+    - 朱迪·福斯特JodieFoster
+    - 拉尔夫·费因斯RalphFiennes
+    - 莱昂纳多·迪卡普里奥LeonardoDiCaprio
+    - 休·杰克曼HughJackman
+    - 马特·达蒙MattDamon
+    - 艾德里安·布洛迪AdrienBrody
+    - 约翰·特拉沃尔塔JohnTra
+    - 查理·卓别林CharlesChaplin
+    - 罗伯特·德尼罗RobertDeNiro
+    - 约翰·库萨克JohnCusack
+    - 摩根·弗里曼MorganFreeman
+    - 林原惠美MegumiHayashibara
+    - 约翰尼·德普JohnnyDepp
+    - 吴念真
+    - 麦斯·米科尔森MadsMik
+    - 柳承龙Seung-yongRyoo
+    - 中谷美纪MikiNakatani
+    - 艾米·汉莫ArmieHamme
+    - 希斯·莱杰HeathLedger
+    - 伊桑·霍克EthanHawke
+    - 本木雅弘MasahiroMotoki
+    - 梅尔·吉布森MelGibson
+    - 布鲁斯·威利斯BruceWi
+    - 林青霞BrigitteLin
+    - 斯科特
+    - 松田洋治YôjiMatsuda
+    - 黎明LeonLai
+    - 北野武TakeshiKitano
+    - 志田未来MiraiShida
+    - 奥黛丽·塔图AudreyTau
+    - 本·阿弗莱克BenAffleck
+    - 夏雨YuXia
+    - 桥本爱AiHashimoto
+    - 凯文·科斯特纳KevinCos
+    - 柳乐优弥YûyaYagira
+    - 多姆纳尔·格里森DomhnallGl
+    - 本名阳子YoukoHonna
+    - 罗夫·拉斯加德RolfLassgård
+    - 岩男润子JunkoIwao
+    - 佐仓绫音AyaneSakura
+    - 凯拉·奈特莉KeiraKnightley
+    - 李政宰Jung-JaeLee
+    - 杰米·福克斯JamieFoxx
+    - 托妮·科莱特ToniCollette
+    - 松隆子TakakoMatsu
+    - 梁正晖Zhenghui
+    - 伊万·麦克格雷格EwanMcGregor
+    - 于是之ShizhiYu
+    - 梁朝伟TonyLeungChiuWai
+    - 泰伊·谢里丹TyeSheri
+    - 赵文瑄WinstonChao
+    - 本尼迪克特·康伯巴奇BenedictC
+    - 沈恩京Eun-kyungShim
+    - SeanPenn
+    - 安德鲁·加菲尔德AndrewGarfield
+    - 河正宇Jung-wooHa
+    - 三船敏郎ToshirôMifune
+    - 安东尼·博金斯Antho
+    - 神木隆之介RyûnosukeKamiki
+    - 雷·沃纳尔LeighWhannell
+    - 弗兰西斯·麦克多蒙德France
+    - 马修·麦康纳MatthewMcCon
+    - 霍卫民WeiminHuo
+    - 周润发Yun-FatChow
+    - 岛本须美SumiShimamoto
+    - 唐·钱德尔DonCheadle
+    - 绫濑遥HarukaAyase
+    - 盖·皮尔斯GuyPearce
+    - 郭涛TaoGuo
+    - 吴君如SandraNg
+    - 杰昆·菲尼克斯JoaquinPhoeni
+    - 仲代达矢TatsuyaNakadai
+    - 吉恩·
+    - 牛振华ZhenhuaN
+    - 达里奥·葛兰帝内提Darío
+    - 凯尔·杜拉KeirDullea
+    - 中川雅也LilyFranky
+    - 杰米·
+    - 约翰·C·赖利JohnC.Reilly
+    - 陈冠希EdisonChen
+    - 迈尔斯·特勒MilesTelle
+    - 戴夫
+    - 梅利莎·乔治Melissa
+    - 张震ChenChang
+    - 高山南MinamiTakayama
+    - 杰克·尼科尔森JackNicholson
+    - 江守彻ToruEmori
+    - 庄益增YizengZhuang
+    - 山口胜平KappeiYamaguchi
+    - 休·格兰特HughGrant
+    - 娜塔莉·波特曼Natalie
+    - 多布杰Duobujie
+    - 杰克·吉伦哈尔JakeGyllenhaal
+    - 达斯汀·霍夫曼DustinHoffman
+    - 卡西·阿弗莱克CaseyAffle
+    - 瑞恩·高斯林RyanGosling
+    - 拉米·马雷克RamiMalek
+    - 海利·乔·奥斯蒙Haley
+    - 张曼玉MaggieCheung
+    - 路易·德·菲耐斯LouisdeFunès
+    - 阿诺·施瓦辛格ArnoldSchwarz
+    - 汤姆·哈迪TomHardy
+    - 吉娜·戴维斯GeenaDavis
+    - 辰己努
+    - 奈良柚莉爱YuriaNara
+    - 布拉德·皮特BradPitt
+    - 艾米丽·芭尔多尼Em
+    - 雅各布·特伦布莱JacobT
+    - 菅田将晖MasakiSuda
+    - 刘晓庆XiaoqingLiu
+    - 尼古拉斯·凯奇NicolasCage
+    - 阿部宽HiroshiAbe
+    - 布丽·拉尔森BrieLarson
+    - 费雯·丽VivienLeigh
+    - 庄司美代子MiyokoShôji
+    - 桑德拉·布洛克SandraBu
+    - 本·斯蒂勒BenStiller
+    - 凯特·温丝莱特KateWinslet
+    - 本·卫肖BenWhishaw
+    - 马尔科姆·麦克道威尔Malc
+
+- lookup: director
+  examples: |
+    - 弗兰克·德拉邦特FrankDarabont
+    - 陈凯歌KaigeChen
+    - 罗伯特·泽米吉斯RobertZemeckis
+    - 詹姆斯·卡梅隆JamesCameron
+    - 吕克·贝松LucBesson
+    - 宫崎骏HayaoMiyazaki
+    - 罗伯托·贝尼尼RobertoBenigni
+    - 史蒂文·斯皮尔伯格StevenSpielberg
+    - 克里斯托弗·诺兰ChristopherNolan
+    - 彼得·威尔PeterWeir
+    - 莱塞·霍尔斯道姆LasseHallström
+    - 朱塞佩·托纳多雷GiuseppeTornatore
+    - 拉库马·希拉尼RajkumarHirani
+    - 克里斯托夫·巴拉蒂ChristopheBarratier
+    - 安德鲁·斯坦顿AndrewStanton
+    - 刘伟强
+    - 拜伦·霍华德ByronHoward
+    - 比利·怀尔德BillyWilder
+    - 刘镇伟JeffreyLau
+    - 黄东赫Dong-hyukHwang
+    - 弗朗西斯·福特·科波拉FrancisFordCoppola
+    - 奥利维·那卡什OlivierNakache
+    - 加布里尔·穆奇诺GabrieleMuccino
+    - 贝纳尔多·贝托鲁奇BernardoBertolucci
+    - 罗伯·莱纳RobReiner
+    - 李·昂克里奇LeeUnkrich
+    - 张艺谋YimouZhang
+    - ChrisColumbus
+    - 彼得·杰克逊PeterJackson
+    - 文牧野MuyeWen
+    - 维克多·弗莱明VictorFleming
+    - 彼特·道格特PeteDocter
+    - 李濬益Jun-ikLee
+    - SidneyLumet
+    - 娜丁·拉巴基NadineLabaki
+    - 涅提·蒂瓦里NiteshTiwari
+    - 姜文WenJiang
+    - 李安AngLee
+    - 阿兰·葛斯彭纳AlainGsponer
+    - 罗曼·波兰斯基RomanPolanski
+    - 马丁·布莱斯MartinBrest
+    - 威廉·惠勒WilliamWyler
+    - 彼得·法雷里PeterFarrelly
+    - 万籁鸣LaimingWan
+    - 安迪·沃卓斯基AndyWachowski
+    - RogerAllers
+    - 杨宇硕Woo-seokYang
+    - 大卫·芬奇DavidFincher
+    - 朗·霍华德RonHoward
+    - 马克·赫尔曼MarkHerman
+    - 弗洛里安·亨克尔·冯·多纳斯马尔克FlorianHenckelvonDonnersmarck
+    - 岩井俊二ShunjiIwai
+    - 盖·里奇GuyRitchie
+    - 罗伯特·怀斯RobertWise
+    - 奥里奥尔·保罗OriolPaulo
+    - 大卫·叶茨DavidYates
+    - 米洛斯·福尔曼MilošForman
+    - 马基德·马基迪MajidMajidi
+    - 乔纳森·戴米JonathanDemme
+    - 韦斯·安德森WesAnderson
+    - MartinScorsese
+    - 周星驰StephenChow
+    - 埃里克·布雷斯EricBress
+    - AlfonsoCuarón
+    - 格斯·范·桑特GusVanSant
+    - 路易·西霍尤斯LouiePsihoyos
+    - 托尼·凯耶TonyKaye
+    - 昆汀·塔伦蒂诺QuentinTarantino
+    - 王家卫KarWaiWong
+    - 查理·卓别林CharlesChaplin
+    - 赛尔乔·莱翁内SergioLeone
+    - 詹姆斯·曼高德JamesMangold
+    - 奉俊昊Joon-hoBong
+    - 今敏SatoshiKon
+    - 戈尔·维宾斯基GoreVerbinski
+    - 杨德昌EdwardYang
+    - 托马斯·温特伯格ThomasVinterberg
+    - 李力持Lik-ChiLee
+    - 李焕庆Hwan-kyeongLee
+    - 中岛哲也TetsuyaNakashima
+    - 卢卡·瓜达尼诺LucaGuadagnino
+    - 蒂姆·波顿TimBurton
+    - 理查德·林克莱特RichardLinklater
+    - 泷田洋二郎YôjirôTakita
+    - 梅尔·吉布森MelGibson
+    - M·奈特·沙马兰M.NightShyamalan
+    - 唐·霍尔DonHall
+    - 陈可辛PeterChan
+    - 北野武TakeshiKitano
+    - 米林宏昌HiromasaYonebayashi
+    - 让-皮埃尔·热内Jean-PierreJeunet
+    - 森淳一JunichiMori
+    - 克林特·伊斯特伍德ClintEastwood
+    - 是枝裕和HirokazuKoreeda
+    - 程小东Siu-TungChing
+    - 理查德·柯蒂斯RichardCurtis
+    - 近藤喜文YoshifumiKondo
+    - 迪恩·德布洛斯DeanDeBlois
+    - 汉内斯·赫尔姆HannesHolm
+    - 迈克·内威尔MikeNewell
+    - 大森贵弘TakahiroOmori
+    - 乔·怀特JoeWright
+    - 朴勋政Hoon-jungPark
+    - 延尚昊Sang-hoYeon
+    - 皮艾尔·柯芬PierreCoffin
+    - 亚当·艾略特AdamElliot
+    - 王树忱ShuchenWang
+    - 谢添TianXie
+    - 王晶JingWong
+    - 莫滕·泰杜姆MortenTyldum
+    - 姜炯哲Hyeong-CheolKang
+    - 杰茜·尼尔森JessieNelson
+    - 金秉祐Byeong-wooKim
+    - 黑泽明AkiraKurosawa
+    - 阿尔弗雷德·希区柯克AlfredHitchcock
+    - 拉娜·沃卓斯基LanaWachowski
+    - 新海诚MakotoShinkai
+    - 詹姆斯·温JamesWan
+    - 马丁·麦克唐纳MartinMcDonagh
+    - 让-马克·瓦雷Jean-MarcVallée
+    - 科克·德·米科KirkDeMicco
+    - 忻钰坤YukunXin
+    - 保罗·格林格拉斯PaulGreengrass
+    - 吴宇森JohnWoo
+    - 费尔南多·梅里尔斯FernandoMeirelles
+    - 特瑞·乔治TerryGeorge
+    - 宁浩HaoNing
+    - 罗启锐AlexLaw
+    - 托德·菲利普斯ToddPhillips
+    - 神山征二郎SeijirôKôyama
+    - 斯坦利·多南StanleyDonen
+    - 黄建新JianxinHuang
+    - 达米安·斯兹弗隆DamiánSzifron
+    - 斯坦利·库布里克StanleyKubrick
+    - 瑞奇·莫尔RichMoore
+    - 达米恩·查泽雷DamienChazelle
+    - 卡洛斯·沙尔丹哈CarlosSaldanha
+    - 丹尼·鲍尔DannyBoyle
+    - 克里斯托弗·史密斯ChristopherSmith
+    - 黄信尧Hsin-yaoHuang
+    - 藤森雅也MasayaFujimori
+    - 达伦·阿罗诺夫斯基DarrenAronofsky
+    - 陆川ChuanLu
+    - CharlesChaplin
+    - 邓肯·琼斯DuncanJones
+    - 巴瑞·莱文森BarryLevinson
+    - 肯尼斯·罗纳根KennethLonergan
+    - 尼克·卡索维茨NickCassavetes
+    - 普特鹏·普罗萨卡·那·萨克那卡林PuttipongPromsakaNaSakolnakorn
+    - 布莱恩·辛格BryanSinger
+    - 徐克HarkTsui
+    - 杰拉尔·乌里GérardOury
+    - 乔治·米勒GeorgeMiller
+    - 李惠民RaymondLee
+    - 雷德利·斯科特RidleyScott
+    - 高畑勋IsaoTakahata
+    - 安德鲁·尼科尔AndrewNiccol
+    - 詹姆斯·沃德·布柯特JamesWardByrkit
+    - 斯蒂芬·卓博斯基StephenChbosky
+    - 土井裕泰NobuhiroDoi
+    - 郭柯KeGuo
+    - 谢晋JinXie
+    - 爱德华·兹威克EdwardZwick
+    - 伦尼·阿伯拉罕森LennyAbrahamson
+    - 茂文·勒鲁瓦MervynLeRoy
+    - 约翰·李·汉考克JohnLeeHancock
+    - 本·斯蒂勒BenStiller
+    - 道格·里曼DougLiman
+    - 史蒂芬·戴德利StephenDaldry
+    - 鲍勃·佩尔西凯蒂BobPersichetti
+    - 约翰·卡尼JohnCarney
+    - 汤姆·提克威TomTykwer
+
+- lookup: movie
+  examples: |
+    - 肖申克的救赎
+    - 霸王别姬
+    - 阿甘正传
+    - 泰坦尼克号
+    - 这个杀手不太冷
+    - 千与千寻
+    - 美丽人生
+    - 辛德勒的名单
+    - 星际穿越
+    - 盗梦空间
+    - 楚门的世界
+    - 忠犬八公的故事
+    - 海上钢琴师
+    - 三傻大闹宝莱坞
+    - 放牛班的春天
+    - 机器人总动员
+    - 无间道
+    - 疯狂动物城
+    - 控方证人
+    - 大话西游之大圣娶亲
+    - 熔炉
+    - 教父
+    - 触不可及
+    - 当幸福来敲门
+    - 末代皇帝
+    - 龙猫
+    - 怦然心动
+    - 寻梦环游记
+    - 活着
+    - 蝙蝠侠：黑暗骑士
+    - 哈利·波特与魔法石
+    - 指环王3：王者无敌
+    - 我不是药神
+    - 乱世佳人
+    - 飞屋环游记
+    - 素媛
+    - 哈尔的移动城堡
+    - 十二怒汉
+    - 何以为家
+    - 摔跤吧！爸爸
+    - 让子弹飞
+    - 天空之城
+    - 鬼子来了
+    - 猫鼠游戏
+    - 少年派的奇幻漂流
+    - 海蒂和爷爷
+    - 钢琴家
+    - 大话西游之月光宝盒
+    - 指环王2：双塔奇兵
+    - 闻香识女人
+    - 罗马假日
+    - 死亡诗社
+    - 天堂电影院
+    - 绿皮书
+    - 大闹天宫
+    - 黑客帝国
+    - 指环王1：护戒使者
+    - 教父2
+    - 狮子王
+    - 辩护人
+    - 饮食男女
+    - 搏击俱乐部
+    - 美丽心灵
+    - 本杰明·巴顿奇事
+    - 穿条纹睡衣的男孩
+    - 窃听风暴
+    - 情书
+    - 两杆大烟枪
+    - 西西里的美丽传说
+    - 音乐之声
+    - 看不见的客人
+    - 阿凡达
+    - 拯救大兵瑞恩
+    - 哈利·波特与死亡圣器(下)
+    - 飞越疯人院
+    - 小鞋子
+    - 沉默的羔羊
+    - 布达佩斯大饭店
+    - 禁闭岛
+    - 功夫
+    - 蝴蝶效应
+    - 致命魔术
+    - 哈利·波特与阿兹卡班的囚徒
+    - 心灵捕手
+    - 海豚湾
+    - 超脱
+    - 低俗小说
+    - 春光乍泄
+    - 摩登时代
+    - 美国往事
+    - 喜剧之王
+    - 致命ID
+    - 杀人回忆
+    - 七宗罪
+    - 红辣椒
+    - 加勒比海盗
+    - 哈利·波特与密室
+    - 一一
+    - 狩猎
+    - 唐伯虎点秋香
+    - 7号房的礼物
+    - 被嫌弃的松子的一生
+    - 请以你的名字呼唤我
+    - 断背山
+    - 剪刀手爱德华
+    - 爱在黎明破晓前
+    - 入殓师
+    - 蝙蝠侠：黑暗骑士崛起
+    - 勇敢的心
+    - 第六感
+    - 重庆森林
+    - 超能陆战队
+    - 幽灵公主
+    - 爱在日落黄昏时
+    - 甜蜜蜜
+    - 菊次郎的夏天
+    - 借东西的小人阿莉埃蒂
+    - 天使爱美丽
+    - 消失的爱人
+    - 阳光灿烂的日子
+    - 小森林 夏秋篇
+    - 完美的世界
+    - 无人知晓
+    - 倩女幽魂
+    - 寄生虫
+    - 时空恋旅人
+    - 侧耳倾听
+    - 小森林 冬春篇
+    - 幸福终点站
+    - 驯龙高手
+    - 一个叫欧维的男人决定去死
+    - 未麻的部屋
+    - 教父3
+    - 哈利·波特与火焰杯
+    - 怪兽电力公司
+    - 萤火之森
+    - 傲慢与偏见
+    - 玩具总动员3
+    - 新世界
+    - 釜山行
+    - 神偷奶爸
+    - 被解救的姜戈
+    - 玛丽和马克思
+    - 告白
+    - 哪吒闹海
+    - 大鱼
+    - 茶馆
+    - 射雕英雄传之东成西就
+    - 九品芝麻官
+    - 头号玩家
+    - 喜宴
+    - 模仿游戏
+    - 色，戒
+    - 阳光姐妹淘
+    - 我是山姆
+    - 花样年华
+    - 血战钢锯岭
+    - 头脑特工队
+    - 恐怖直播
+    - 七武士
+    - 惊魂记
+    - 黑客帝国3：矩阵革命
+    - 你的名字。
+    - 电锯惊魂
+    - 三块广告牌
+    - 达拉斯买家俱乐部
+    - 疯狂原始人
+    - 心迷宫
+    - 谍影重重3
+    - 英雄本色
+    - 上帝之城
+    - 风之谷
+    - 卢旺达饭店
+    - 纵横四海
+    - 海街日记
+    - 爱在午夜降临前
+    - 绿里奇迹
+    - 记忆碎片
+    - 疯狂的石头
+    - 岁月神偷
+    - 小丑
+    - 忠犬八公物语
+    - 雨中曲
+    - 背靠背，脸对脸
+    - 荒蛮故事
+    - 2001太空漫游
+    - 小偷家族
+    - 心灵奇旅
+    - 无敌破坏王
+    - 无间道2
+    - 爆裂鼓手
+    - 冰川时代
+    - 贫民窟的百万富翁
+    - 恐怖游轮
+    - 东邪西毒
+    - 牯岭街少年杀人事件
+    - 魔女宅急便
+    - 遗愿清单
+    - 东京教父
+    - 大佛普拉斯
+    - 你看起来好像很好吃
+    - 真爱至上
+    - 黑天鹅
+    - 可可西里
+    - 城市之光
+    - 源代码
+    - 雨人
+    - 海边的曼彻斯特
+    - 恋恋笔记本
+    - 初恋这件小事
+    - 波西米亚狂想曲
+    - 人工智能
+    - 青蛇
+    - 虎口脱险
+    - 终结者2：审判日
+    - 疯狂的麦克斯4：狂暴之路
+    - 罗生门
+    - 新龙门客栈
+    - 末路狂花
+    - 萤火虫之墓
+    - 千钧一发
+    - 崖上的波妞
+    - 无耻混蛋
+    - 彗星来的那一夜
+    - 奇迹男孩
+    - 花束般的恋爱
+    - 二十二
+    - 爱乐之城
+    - 黑客帝国2：重装上阵
+    - 芙蓉镇
+    - 血钻
+    - 战争之王
+    - 步履不停
+    - 房间
+    - 哈利·波特与死亡圣器(上)
+    - 魂断蓝桥
+    - 火星救援
+    - 千年女优
+    - 谍影重重2
+    - 弱点
+    - 白日梦想家
+    - 哈利·波特与凤凰社
+    - 阿飞正传
+    - 谍影重重
+    - 朗读者
+    - 蜘蛛侠：平行宇宙
+    - 燃情岁月
+    - 再次出发之纽约遇见你
+    - 香水
+    - 发条橙
+
+- lookup: movie_type
+  examples: |
+    - 犯罪
+    - 剧情
+    - 科幻
+    - 喜剧
+    - 动画
+    - 奇幻
+    - 传记
+    - 动作
+    - 纪录片
+    - 爱情
+    - 悬疑
+    - 儿童
+    - 冒险
+# 正则表达式字段
