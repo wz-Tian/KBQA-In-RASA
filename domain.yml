@@ -1,0 +1,79 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: []
+- goodbye:
+    use_entities: []
+- who_are_you:
+    use_entities: []
+- what_to_do:
+    use_entities: []
+- thanks:
+    use_entities: []
+- deny:
+    use_entities: []
+- affirm:
+    use_entities: []
+- recommend_movie:
+    use_entities: true
+- recommend_movie_without_entities:
+    use_entities: []
+entities:
+- movie
+- actor
+- director
+- movie_type
+- time
+- single_time
+- rate
+- country
+slots: {}
+responses:
+  utter_greet:
+  - text: 你好，我是电影小助手，有什么可以帮到您
+  - text: hi，我是电影小助手，有什么可以帮到您
+  - text: 你好
+  - text: hi
+  utter_goodbye:
+  - text: 下次见
+  - text: bye
+  - text: 拜拜
+  - text: 拜
+  - text: 下次有什么问题再来问我
+  utter_who_are_you:
+  - text: 我是电影小助手，您可以问我电影有关的知识
+  - text: 我是电影小助手，尝试问我电影相关的内容吧
+  - text: 我是电影小助手，您有什么相关的问题我可以帮您解答
+  - text: 我是电影问答机器人
+  utter_what_to_do:
+  - text: 我可以帮您回答电影相关信息
+  - text: 尝试问我电影相关的问题试试，比如一部电影的演员
+  - text: 我是电影小助手，有任何电影方面的问题可以尝试问我
+  utter_thanks:
+  - text: 不客气
+  - text: 这是我分内的事
+  - text: 是我应该做的
+  - text: 能解答您的问题是我的荣幸
+  utter_deny:
+  - text: 不好意思.
+  utter_affirm:
+  - text: 好的
+  - text: OK
+  utter_recommend_movie:
+  - text: wow，你有什么想看的类型吗？
+  - text: 好的，请问你有什么想看的类型吗？
+  utter_recommend_movie_without_entities:
+  - text: 您想看什么类型的电影？
+  - text: 有您喜欢的导演吗？
+  - text: 您有没有喜欢的演员？
+  - text: 您想要看哪个国家的电影？
+  - text: 有您想看的类型吗？
+actions:
+- action_recommend_movie
+forms: {}
+e2e_actions: []
