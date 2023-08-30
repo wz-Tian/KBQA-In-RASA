@@ -33,3 +33,8 @@ stories:
     - action: utter_recommend_movie_without_entities
     - intent: recommend_movie
     - action: action_recommend_movie
+
+- story: detail_of_movie
+  steps:
+    - intent: detail_of_movie
+    - action: action_detail_of_movie
