@@ -92,31 +92,37 @@ class ActionDetailOfMovie(Action):
             ## 连接数据库
             graph = Graph("http://localhost:7474/browser/", auth=('xiaowuchanglu', 'zz080222zz'), name='movieGraph')
             cypher = 'MATCH(n:movie) where n.name = ' + '\'' + movie + '\' return n'
-            data_list = dict(graph.run(cypher).data()[0]['n'])
-            if actor_entity_name is None and director_entity_name is None and movie_type_entity_name is None and single_time_entity_name is None and rate_entity_name is None and num_entity_name is None and country_entity_name is None:
-                message_str = movie + '是' + data_list['director'] + '导演, ' + data_list['actor'] + '主演, ' + '于' + \
-                              str(data_list['time']) + '在' + data_list['country'] + '上映的一部' + data_list[
-                                  'type'] + '电影， ' + '这部电影在上映时获得了' + data_list[
-                                  'num'] + '的票房' + ', 豆瓣评分' + str(data_list['rate']) + '以下是这部电影的简介：\n' + \
-                              data_list['info']
-                dispatcher.utter_message(message_str)
+            data_result = graph.run(cypher).data()
+            if len(data_result) == 0:
+                dispatcher.utter_message('对不起，我暂时不知道您要找的电影')
             else:
-                message_str = movie
-                if director_entity_name is not None:
-                    message_str += '是' + data_list['director'] + '导演的 '
-                if actor_entity_name is not None:
-                    message_str += '是' + data_list['actor'] + '主演的 '
-                if movie_type_entity_name is not None:
-                    message_str += '是一部' + data_list['type'] + '电影 '
-                if single_time_entity_name is not None:
-                    message_str += '于' + str(data_list['time']) + '上映 '
-                if rate_entity_name is not None:
-                    message_str += '豆瓣评分' + str(data_list['rate']) + ' '
-                if num_entity_name is not None:
-                    message_str += '上映票房' + data_list['num'] + ' '
-                if country_entity_name is not None:
-                    message_str += '在' + data_list['country'] + '上映 '
-                dispatcher.utter_message(message_str)
+                data_list = dict(data_result[0]['n'])
+                if actor_entity_name is None and director_entity_name is None and movie_type_entity_name is None and single_time_entity_name is None and rate_entity_name is None and num_entity_name is None and country_entity_name is None:
+                    message_str = movie + '是' + data_list['director'] + '导演, ' + data_list[
+                        'actor'] + '主演, ' + '于' + \
+                                  str(data_list['time']) + '在' + data_list['country'] + '上映的一部' + data_list[
+                                      'type'] + '电影， ' + '这部电影在上映时获得了' + data_list[
+                                      'num'] + '的票房' + ', 豆瓣评分' + str(
+                        data_list['rate']) + '以下是这部电影的简介：\n' + \
+                                  data_list['info']
+                    dispatcher.utter_message(message_str)
+                else:
+                    message_str = movie
+                    if director_entity_name is not None:
+                        message_str += '是' + data_list['director'] + '导演的 '
+                    if actor_entity_name is not None:
+                        message_str += '是' + data_list['actor'] + '主演的 '
+                    if movie_type_entity_name is not None:
+                        message_str += '是一部' + data_list['type'] + '电影 '
+                    if single_time_entity_name is not None:
+                        message_str += '于' + str(data_list['time']) + '上映 '
+                    if rate_entity_name is not None:
+                        message_str += '豆瓣评分' + str(data_list['rate']) + ' '
+                    if num_entity_name is not None:
+                        message_str += '上映票房' + data_list['num'] + ' '
+                    if country_entity_name is not None:
+                        message_str += '在' + data_list['country'] + '上映 '
+                    dispatcher.utter_message(message_str)
 
         return []
 
