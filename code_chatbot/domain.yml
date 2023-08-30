@@ -23,6 +23,8 @@ intents:
     use_entities: true
 - recommend_movie_without_entities:
     use_entities: []
+- detail_of_movie:
+    use_entities: true
 entities:
 - movie
 - actor
@@ -32,6 +34,13 @@ entities:
 - single_time
 - rate
 - country
+- director_entity_name
+- actor_entity_name
+- movie_type_entity_name
+- single_time_entity_name
+- rate_entity_name
+- country_entity_name
+- num_entity_name
 slots: {}
 responses:
   utter_greet:
@@ -75,5 +84,7 @@ responses:
   - text: 有您想看的类型吗？
 actions:
 - action_recommend_movie
+- action_detail_of_movie
+- my_fallback_action
 forms: {}
 e2e_actions: []
