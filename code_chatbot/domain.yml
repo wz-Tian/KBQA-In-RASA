@@ -77,7 +77,6 @@ responses:
   - text: wow，你有什么想看的类型吗？
   - text: 好的，请问你有什么想看的类型吗？
   utter_recommend_movie_without_entities:
-  - text: 您想看什么类型的电影？
   - text: 有您喜欢的导演吗？
   - text: 您有没有喜欢的演员？
   - text: 您想要看哪个国家的电影？
