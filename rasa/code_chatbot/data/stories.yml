@@ -1,0 +1,40 @@
+version: "2.0"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: answer the questions who_are_you
+  steps:
+  - intent: who_are_you
+  - action: utter_who_are_you
+
+- story: answer the question what to dp
+  steps:
+  - intent: what_to_do
+  - action: utter_what_to_do
+
+- story: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: who_are_you
+    - action: utter_who_are_you
+
+- story: recommend_movie
+  steps:
+    - intent: recommend_movie
+    - action: action_recommend_movie
+
+- story: recommend_movie_without_entities
+  steps:
+    - intent: recommend_movie_without_entities
+    - action: utter_recommend_movie_without_entities
+    - intent: recommend_movie
+    - action: action_recommend_movie
+
+- story: detail_of_movie
+  steps:
+    - intent: detail_of_movie
+    - action: action_detail_of_movie
